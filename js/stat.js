@@ -16,13 +16,7 @@ var drawText = function (ctx) {
 };
 
 var getMaxValue = function (times) {
-  var maxValue = times[0];
-  for (var i = 1; i < times.length; i++) {
-    if (times[i] > maxValue) {
-      maxValue = times[i];
-    }
-  }
-  return maxValue;
+  return Math.max.apply(null, times);
 };
 
 window.renderStatistics = function (ctx, names, times) {
@@ -32,13 +26,13 @@ window.renderStatistics = function (ctx, names, times) {
   var maxColumnLength = 150 * getMaxValue(times) / getMaxValue(times);
   var columnPosition = 50;
 
-  for (var i = 0; i < names.length; i++) {
+  names.forEach(function (item, index) {
     columnPosition += 90;
     ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-    var columnLength = 150 * times[i] / getMaxValue(times);
-    ctx.fillText(Math.round(times[i]), columnPosition, (85 + (maxColumnLength - columnLength)));
-    ctx.fillText(names[i], columnPosition, 260);
-    if (names[i] === 'Вы') {
+    var columnLength = 150 * times[index] / getMaxValue(times);
+    ctx.fillText(Math.round(times[index]), columnPosition, (85 + (maxColumnLength - columnLength)));
+    ctx.fillText(item, columnPosition, 260);
+    if (item === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
       var randomNumber = +Math.random().toFixed(1);
@@ -46,5 +40,5 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillStyle = 'rgb(0, 0, 205,' + randomOpacity + ')';
     }
     ctx.fillRect(columnPosition, (105 + (maxColumnLength - columnLength)), 40, columnLength);
-  }
+  });
 };
