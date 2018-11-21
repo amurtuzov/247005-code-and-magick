@@ -2,8 +2,8 @@
 document.querySelector('.setup').classList.remove('hidden');
 var wizardsNames = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var wizardsSurnames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
-var coatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var eyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
+var wizardsCoatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+var wizardsEyesColors = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var getRandomNumber = function (maxNumber) {
   return Math.round(Math.random() * maxNumber);
@@ -17,8 +17,8 @@ var CreateWizard = function (names, surnames, coatColors, eyesColors) {
 var getWizards = function () {
   var wizards = [];
   for (var i = 0; i < 4; i++) {
-    wizards[i] = new CreateWizard(wizardsNames,wizardsSurnames,coatColors,eyesColors);
-  };
+    wizards[i] = new CreateWizard(wizardsNames, wizardsSurnames, wizardsCoatColors, wizardsEyesColors);
+  }
   return wizards;
 };
 
