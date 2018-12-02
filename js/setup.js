@@ -142,7 +142,6 @@ var setupWizard = function () {
   });
   wizardFireball.addEventListener('click', function () {
     var randomFirballColor = wizardsFireballColors[getRandomNumber(4)];
-    console.log(this);
     this.style.backgroundColor = randomFirballColor;
     wizardFireballInput.value = randomFirballColor;
   });
