@@ -52,6 +52,8 @@ var setupSaver = setup.querySelector('.setup-submit');
 
 var openSetup = function () {
   setup.classList.remove('hidden');
+  setup.style.top = "80px";
+  setup.style.left = "50%";
   setupCloser.addEventListener('click', closeSetup);
   document.addEventListener('keydown', closeSetupEscPress);
   setupCloser.addEventListener('keydown', closeSetupEnterPress);
@@ -85,6 +87,8 @@ var closeSetup = function () {
 var openSetupEnterPress = function (evt) {
   if (evt.keyCode === 13) {
     setup.classList.remove('hidden');
+    setup.style.top = "80px";
+    setup.style.left = "50%";
     setupCloser.addEventListener('click', closeSetup);
     document.addEventListener('keydown', closeSetupEscPress);
     setupCloser.addEventListener('keydown', closeSetupEnterPress);
