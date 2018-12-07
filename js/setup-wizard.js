@@ -10,17 +10,17 @@
 
   wizardCoat.addEventListener('click', function () {
     var randomCoatColor = window.wizardsCoatColors[window.getRandomNumber(5)];
-    this.style.fill = randomCoatColor;
+    wizardCoat.style.fill = randomCoatColor;
     wizardCoatInput.value = randomCoatColor;
   });
   wizardEyes.addEventListener('click', function () {
     var randomEyesColor = window.wizardsEyesColors[window.getRandomNumber(4)];
-    this.style.fill = randomEyesColor;
+    wizardEyes.style.fill = randomEyesColor;
     wizardEyesInput.value = randomEyesColor;
   });
   wizardFireball.addEventListener('click', function () {
     var randomFirballColor = window.wizardsFireballColors[window.getRandomNumber(4)];
-    this.style.backgroundColor = randomFirballColor;
+    wizardFireball.style.backgroundColor = randomFirballColor;
     wizardFireballInput.value = randomFirballColor;
   });
 })();
